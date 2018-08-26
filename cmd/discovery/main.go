@@ -15,6 +15,11 @@ import (
 	"github.com/skycoin/skywire/pkg/net/util"
 
 	"net/http"
+
+	// WARNING: Automatically registers debug/pprof onto the http.DefaultServer,
+	// which is used by the discovery server monitor.
+	// The monitor needs to be switched to a non-default http.Server so
+	// that the profiler can be selectively enabled
 	_ "net/http/pprof"
 )
 
